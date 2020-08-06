@@ -45,7 +45,7 @@
     "provisioners": [
     {
         "type": "shell",
-        "script": "script.sh"
+        "script": "setup.sh"
       }
     ]
 }
