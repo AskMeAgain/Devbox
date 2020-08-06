@@ -19,6 +19,8 @@
                 "<wait2m>e<leftAltOff>",
                 "<leftSuperOn><enter><leftSuperOff>",
                 "curl -O http://{{ .HTTPIP }}:{{ .HTTPPort }}/enable-ssh.sh<enter><wait5>",
+                "curl -O http://{{ .HTTPIP }}:{{ .HTTPPort }}/i3-config.txt<enter><wait5>",
+                "<wait1000>",
                 "sudo bash ./en<tab><enter>"
             ],
             "disk_size": "{{user `disksize`}}",
@@ -41,15 +43,9 @@
         }
     ],
     "provisioners": [
-        {
-            "type": "shell",
-            "execute_command": "{{ .Vars }} sudo -E -S bash '{{ .Path }}'",
-            "script": "scripts/install-virtualbox.sh"
-        },
-        {
-            "type": "shell",
-            "execute_command": "{{ .Vars }} sudo -E -S bash '{{ .Path }}'",
-            "script": "scripts/setup-manjaro.sh"
-        }
+    {
+        "type": "shell",
+        "script": "script.sh"
+      }
     ]
 }
