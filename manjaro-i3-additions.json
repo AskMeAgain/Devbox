@@ -1,0 +1,28 @@
+{
+    "variables": {
+        "name": "dev",
+        "disksize": "20480",
+        "vmname": "cool11112"
+    },
+    "builders": [
+        {
+            "keep_registered": true,
+            "type": "virtualbox-ovf",
+            "source_path": "./output-virtualbox-iso/{{user `vmname`}}.ovf",
+            "ssh_username": "{{user `name`}}",
+            "ssh_password": "1234",
+            "shutdown_command": "echo '1234' | sudo -S shutdown now",
+            "boot_command": [
+                "<wait15><leftSuperOn><enter><leftSuperOff><wait>",
+                "sudo systemctl start sshd.service<enter><wait>1234<enter>"
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "./scripts/",
+            "destination": "/home/{{user `name`}}/Downloads"
+        }
+    ]
+}
