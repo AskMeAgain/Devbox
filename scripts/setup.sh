@@ -5,7 +5,7 @@ echo '1234' | sudo -S pacman -S --noconfirm pacutils unzip
 sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
 
 #guest additions
-sudo pacman -S --noconfirm virtualbox-guest-utils xclip
+sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh compton
 
 #zsh & powerlevel10k
 sudo pacman -S zsh zsh-completions --noconfirm
@@ -20,10 +20,14 @@ mv p10kzsh.txt ../.p10k.zsh
 mv i3-config.txt ../.i3/config
 
 #set themes
-#sudo pacman -S lxappearance-gtk3 --noconfirm
+echo "opacity-rule = [" | sudo tee -a /etc/xdg/picom.conf
+echo "\"90:class_g = 'tilix' && focused\"," | sudo tee -a /etc/xdg/picom.conf
+echo "\"60:class_g = 'tilix' && !focused\"" | sudo tee -a /etc/xdg/picom.conf
+echo "];" | sudo tee -a /etc/xdg/picom.conf
+
 cp gtk-2.txt gtk-2.new
-mv gtk-2.txt ../.gtkrc-2.0.mine
-mv gtk-2.new ../.gtkrc-2.0
+mv gtk-2.txt ../.gtkrc-2.0
+mv gtk3settings.txt ../.config/gtk-3.0/settings.ini
 
 #firefox
 sudo pacman -S firefox --noconfirm

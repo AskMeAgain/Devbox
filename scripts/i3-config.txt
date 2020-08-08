@@ -155,6 +155,12 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 exec --no-startup-id xrandr --output VGA-1 --mode 1360x768
+exec --no-startup-id feh --bg-fill ~/Downloads/autumn.jpg
+exec --no-startup-id picom
+
+for_window [class=".*"] border pixel 0
+
+gaps inner 7
 
 client.focused          #afafaf #FFFFFF #afafaf #afafaf
 client.focused_inactive #333333 #5F676A #ffffff #484e50
