@@ -14,7 +14,11 @@
             "shutdown_command": "echo '1234' | sudo -S shutdown now",
             "boot_command": [
                 "<wait15><leftSuperOn><enter><leftSuperOff><wait>",
-                "sudo systemctl start sshd.service<enter><wait>1234<enter>"
+                "sudo -s<enter><wait>1234<enter><wait>",
+                "echo 'X11Forwarding yes' >> /etc/ssh/sshd_config<enter><wait>",
+                "echo 'X11UseLocalhost no' >> /etc/ssh/ssh_config<enter><wait>",
+                "exit<enter><wait>",
+                "systemctl start sshd.service<enter><wait>1234<enter>"
             ]
         }
     ],
@@ -23,6 +27,14 @@
             "type": "file",
             "source": "./scripts/",
             "destination": "/home/{{user `name`}}/Downloads"
+        },
+        {
+            "type": "shell",
+            "inline": "echo '1234' | sudo -S localectl set-keymap de"
+        },
+        {
+            "type": "shell",
+            "inline": "cd ~/Downloads/ && bash ./setup.sh"
         }
     ]
 }

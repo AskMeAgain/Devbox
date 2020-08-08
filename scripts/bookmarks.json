@@ -1,0 +1,11 @@
+"list": [
+    {
+        "command": "asd",
+        "name": "asd",
+        "type": "COMMAND"
+    }
+],
+"name": "Root",
+"type": "FOLDER"
+}
+
