@@ -151,9 +151,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec --no-startup-id typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-exec --no-startup-id xrandr --output VGA-1 --mode 1360x768
-exec --no-startup-id feh --bg-fill ~/Downloads/forest.jpg
+exec --no-startup-id xrandr --output VGA-1 --mode 1920x1080
+exec --no-startup-id feh --bg-fill ~/Downloads/snow.jpg
 exec --no-startup-id picom
 
 for_window [class=".*"] border pixel 0

@@ -5,7 +5,7 @@ echo '1234' | sudo -S pacman -S --noconfirm pacutils unzip
 sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
 
 #guest additions
-sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh firefox
+sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh firefox mc
 
 #zsh & powerlevel10k
 sudo pacman -S zsh zsh-completions --noconfirm
