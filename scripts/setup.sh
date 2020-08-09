@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 #normal update
-echo '1234' | sudo -S pacman -S --noconfirm pacutils unzip
+echo '1234' | sudo -S localectl set-keymap de
+sudo -S pacman -S --noconfirm pacutils unzip
 sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
 
 #guest additions
@@ -38,3 +39,6 @@ dconf load /com/gexperts/Tilix/ < ./tilix.dconf
 mkdir ../.config/tilix
 mv bookmarks.json ../.config/tilix/bookmarks.json
 #mv tilix-color-scheme.txt ../.config/tilix/scheme.json
+
+#pcmanfm
+mv pcmanfmconf.txt ../.config/pcmanfm/default/pcmanfm.conf

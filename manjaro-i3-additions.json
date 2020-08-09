@@ -29,8 +29,9 @@
             "destination": "/home/{{user `name`}}/Downloads"
         },
         {
-            "type": "shell",
-            "inline": "echo '1234' | sudo -S localectl set-keymap de"
+            "type": "file",
+            "source": "./images/",
+            "destination": "/home/{{user `name`}}/Downloads"
         },
         {
             "type": "shell",

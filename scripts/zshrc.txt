@@ -131,7 +131,6 @@ parse_git_state() {
 # Right prompt with exit status of previous command marked with ✓ or ✗
  #RPROMPT="%(?.%{$fg[green]%}✓ %{$reset_color%}.%{$fg[red]%}✗ %{$reset_color%})"
 
-
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
 export LESS_TERMCAP_md=$'\E[01;32m'
@@ -182,5 +181,6 @@ bindkey "^[[B" history-beginning-search-forward
 
 ## Alias section 
 alias ccc="xclip -sel clip"
+alias files="pcmanfm &"
 
 source ~/.p10k.zsh
