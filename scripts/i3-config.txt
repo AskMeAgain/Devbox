@@ -1,7 +1,5 @@
 set $mod Mod4
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: Source Code Pro 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -29,7 +27,7 @@ floating_modifier $mod
 bindsym $mod+Return exec tilix
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+w kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -67,7 +65,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+Shift+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -155,7 +153,7 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 exec --no-startup-id xrandr --output VGA-1 --mode 1360x768
-exec --no-startup-id feh --bg-fill ~/Downloads/autumn.jpg
+exec --no-startup-id feh --bg-fill ~/Downloads/forest.jpg
 exec --no-startup-id picom
 
 for_window [class=".*"] border pixel 0
@@ -168,11 +166,17 @@ client.unfocused        #333333 #424242 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
 
 bar {
+    i3bar_command i3bar -t
+    status_command i3status -c ~/.i3/i3status
     position top
-    status_command i3status
-    tray_output LVDS
-    colors{
-        background #232323
-        statusline #DCDCDC
+    strip_workspace_numbers yes
+    height 25
+    colors {
+        background #00000000 
+        statusline #00000000
+        separator #00000000
+        focused_workspace #00000000 #FFFFFF #FFFFFF 
+        focused_workspace #00000000 #FFFFFF #FFFFFF 
+        focused_workspace #00000000 #FF0000 #FFFFFF 
     }
 }

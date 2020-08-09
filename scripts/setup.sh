@@ -5,7 +5,7 @@ echo '1234' | sudo -S pacman -S --noconfirm pacutils unzip
 sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
 
 #guest additions
-sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh compton
+sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh firefox
 
 #zsh & powerlevel10k
 sudo pacman -S zsh zsh-completions --noconfirm
@@ -16,24 +16,25 @@ chsh -s $(which zsh) <<< "1234"
 mv zshrc.txt ../.zshrc
 mv p10kzsh.txt ../.p10k.zsh
 
-#replace i3 config
-mv i3-config.txt ../.i3/config
-
 #set themes
+mv i3-config.txt ../.i3/config
 echo "opacity-rule = [" | sudo tee -a /etc/xdg/picom.conf
-echo "\"90:class_g = 'tilix' && focused\"," | sudo tee -a /etc/xdg/picom.conf
-echo "\"60:class_g = 'tilix' && !focused\"" | sudo tee -a /etc/xdg/picom.conf
+echo "    \"90:class_g = 'tilix' && focused\"," | sudo tee -a /etc/xdg/picom.conf
+echo "    \"60:class_g = 'tilix' && !focused\"" | sudo tee -a /etc/xdg/picom.conf
 echo "];" | sudo tee -a /etc/xdg/picom.conf
 
+#install gtk theme
+sudo tar -C /usr/share/themes -xvf Orchis-light.tar.xz
 cp gtk-2.txt gtk-2.new
 mv gtk-2.txt ../.gtkrc-2.0
 mv gtk3settings.txt ../.config/gtk-3.0/settings.ini
 
-#firefox
-sudo pacman -S firefox --noconfirm
+# so transparency works
+sed -i 's/paint/#paint/g' ../.config/compton.conf
 
-#terminal prog
+#terminal prog tilix
 sudo pacman -S tilix --noconfirm || true
 dconf load /com/gexperts/Tilix/ < ./tilix.dconf
 mkdir ../.config/tilix
 mv bookmarks.json ../.config/tilix/bookmarks.json
+#mv tilix-color-scheme.txt ../.config/tilix/scheme.json
