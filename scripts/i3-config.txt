@@ -1,4 +1,4 @@
-set $mod Mod4
+set $mod Mod1
 
 font pango: Source Code Pro 8
 

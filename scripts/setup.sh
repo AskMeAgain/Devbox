@@ -6,7 +6,8 @@ sudo -S pacman -S --noconfirm pacutils unzip
 sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
 
 #guest additions
-sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh firefox mc
+sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh firefox ranger
+sudo pacman -R --noconfirm pcmanfm
 
 #zsh & powerlevel10k
 sudo pacman -S zsh zsh-completions --noconfirm
@@ -40,5 +41,8 @@ mkdir ../.config/tilix
 mv bookmarks.json ../.config/tilix/bookmarks.json
 #mv tilix-color-scheme.txt ../.config/tilix/scheme.json
 
-#pcmanfm
-mv pcmanfmconf.txt ../.config/pcmanfm/default/pcmanfm.conf
+#ranger
+mkdir ../.config/ranger/colorschemes
+mv ranger/commands.py ../.config/ranger/commands.py
+mv ranger/rcconf.txt ../.config/ranger/rc.conf
+mv ranger/colorscheme.py ../.config/ranger/colorschemes/orchid.py
