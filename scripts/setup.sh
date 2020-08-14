@@ -44,8 +44,9 @@ mv tilix/bookmarks.json ../.config/tilix/bookmarks.json
 mkdir ../.config/ranger/colorschemes
 mv ranger/commands.py ../.config/ranger/commands.py
 mv ranger/rcconf.txt ../.config/ranger/rc.conf
-mv ranger/colorscheme.py ../.config/ranger/colorschemes/orchid.py
+mv ranger/orchid.py ../.config/ranger/colorschemes/orchid.py
 
 #rofi
 mkdir ../.config/rofi
 mv rofi/config.rasi ../.config/rofi/config.rasi
+mv rofi/orchid.rasi ../.config/rofi/orchid.rasi
