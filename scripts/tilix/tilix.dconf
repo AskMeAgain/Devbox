@@ -1,7 +1,8 @@
 [/]
+app-title='${directory}'
 auto-hide-mouse=true
 control-scroll-zoom=true
-enable-wide-handle=false
+enable-wide-handle=true
 new-instance-mode='new-window'
 prompt-on-close-process=false
 quake-specific-monitor=0
