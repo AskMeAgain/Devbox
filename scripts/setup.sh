@@ -6,7 +6,7 @@ sudo -S pacman -S --noconfirm pacutils unzip
 sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
 
 #guest additions
-sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh firefox ranger rofi
+sudo pacman -S --noconfirm virtualbox-guest-utils xclip feh firefox ranger rofi py3status
 sudo pacman -R --noconfirm pcmanfm
 
 #zsh & powerlevel10k
