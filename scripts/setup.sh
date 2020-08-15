@@ -20,6 +20,7 @@ mv shells/p10kzsh.txt ../.p10k.zsh
 
 #set themes
 mv i3/i3-config.txt ../.i3/config
+mv i3/i3status.txt ../.i3status.conf
 echo "opacity-rule = [" | sudo tee -a /etc/xdg/picom.conf
 echo "    \"90:class_g = 'tilix' && focused\"," | sudo tee -a /etc/xdg/picom.conf
 echo "    \"60:class_g = 'tilix' && !focused\"" | sudo tee -a /etc/xdg/picom.conf
@@ -52,4 +53,4 @@ mv rofi/config.rasi ../.config/rofi/config.rasi
 mv rofi/orchid.rasi ../.config/rofi/orchid.rasi
 
 #upgrade again after all installs
-#sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
+sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade

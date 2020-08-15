@@ -13,7 +13,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-bindsym $mod+t exec --no-startup-id ranger
+bindsym $mod+t exec --no-startup-id tilix -a app-new-window -x "ranger"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -164,6 +164,7 @@ client.focused          #afafaf #000000	 #afafaf #afafaf
 client.focused_inactive #333333 #5F676A #ffffff #484e50
 client.unfocused        #333333 #FFFFFF00 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
+
 bar {
     tray_padding 3px
     i3bar_command i3bar --transparency

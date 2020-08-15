@@ -1,8 +1,7 @@
 {
     "variables": {
         "name": "dev",
-        "disksize": "20480",
-        "vmname": "cool11112"
+        "disksize": "20480"
     },
     "builders": [
         {
@@ -10,7 +9,7 @@
             "keep_registered": true,
             "type": "virtualbox-ovf",
             "source_path": "./output-virtualbox-iso/{{user `vmname`}}.ovf",
-            "ssh_username": "{{user `name`}}",
+            "ssh_username": "{{user `username`}}",
             "ssh_password": "1234",
             "shutdown_command": "echo '1234' | sudo -S shutdown now",
             "boot_command": [
@@ -27,12 +26,12 @@
         {
             "type": "file",
             "source": "./scripts/",
-            "destination": "/home/{{user `name`}}/Downloads"
+            "destination": "/home/{{user `username`}}/Downloads"
         },
         {
             "type": "file",
             "source": "./images/",
-            "destination": "/home/{{user `name`}}/Downloads"
+            "destination": "/home/{{user `username`}}/Downloads"
         },
         {
             "type": "shell",
