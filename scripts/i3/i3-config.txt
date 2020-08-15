@@ -13,7 +13,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-bindsym $mod+f exec --no-startup-id ranger
+bindsym $mod+t exec --no-startup-id ranger
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -81,16 +81,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1 "
+set $ws2 "2 "
+set $ws3 "3 "
+set $ws4 "4 "
+set $ws5 "5 "
+set $ws6 "6 "
+set $ws7 "7 "
+set $ws8 "8 "
+set $ws9 "9 "
+set $ws10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -153,28 +153,31 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id xrandr --output VGA-1 --mode 1920x1080
 exec --no-startup-id feh --bg-fill ~/Downloads/snow.jpg
 exec --no-startup-id picom
+smart_borders on
 
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 3
+
 
 gaps inner 7
 
-client.focused          #afafaf #FFFFFF #afafaf #afafaf
+client.focused          #afafaf #000000	 #afafaf #afafaf
 client.focused_inactive #333333 #5F676A #ffffff #484e50
-client.unfocused        #333333 #424242 #888888 #292d2e
+client.unfocused        #333333 #FFFFFF00 #888888 #292d2e
 client.urgent           #C10004 #900000 #ffffff #900000
-
 bar {
-    i3bar_command i3bar -t
-    status_command i3status -c ~/.i3/i3status
+    tray_padding 3px
+    i3bar_command i3bar --transparency
+    status_command py3status -c ~/.i3status.conf
     position top
-    strip_workspace_numbers yes
-    height 25
+    height 30
+    font pango:Source Code Pro 11 
+    separator_symbol " | "
     colors {
         background #00000000 
-        statusline #00000000
-        separator #00000000
+        statusline #000000
+        separator #000000
         focused_workspace #00000000 #FFFFFF #FFFFFF 
         focused_workspace #00000000 #FFFFFF #FFFFFF 
-        focused_workspace #00000000 #FF0000 #FFFFFF 
+        focused_workspace #00000000 #000000 #FFFFFF 
     }
 }

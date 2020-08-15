@@ -50,3 +50,6 @@ mv ranger/orchid.py ../.config/ranger/colorschemes/orchid.py
 mkdir ../.config/rofi
 mv rofi/config.rasi ../.config/rofi/config.rasi
 mv rofi/orchid.rasi ../.config/rofi/orchid.rasi
+
+#upgrade again after all installs
+#sudo pacinstall --no-confirm --resolve-conflicts=all --sysupgrade
