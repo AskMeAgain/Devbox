@@ -6,6 +6,7 @@
     },
     "builders": [
         {
+            "vm_name": "{{user `vmname`}}",
             "keep_registered": true,
             "type": "virtualbox-ovf",
             "source_path": "./output-virtualbox-iso/{{user `vmname`}}.ovf",

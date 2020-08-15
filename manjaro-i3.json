@@ -13,15 +13,17 @@
             "http_directory": "http",
             "boot_wait": "5s",
             "boot_command": [
-                "<enter><wait24><right><enter><wait2><leftSuperOn>i<leftSuperOff><wait4>",
+                "<enter><wait30><right><enter><wait2><leftSuperOn>i<leftSuperOff><wait4>",
                 "<leftAltOn><wait>e<up><up>n<wait>n<wait><leftAltOff><leftAltOn>n<leftAltOff><wait><tab><tab><tab><wait><spacebar><leftAltOn>n<leftAltOff><wait>",
                 "{{user `name`}}<tab><tab>{{user `name`}}box<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait1>i<wait>i",
                 "<wait120>d<leftAltOff>",
-                "<leftSuperOn><enter><leftSuperOff><wait1>"
+                "<leftSuperOn><enter><leftSuperOff><wait1>shutdown now<enter>"
             ],
             "disk_size": "{{user `disksize`}}",
             "hard_drive_interface": "sata",
             "communicator": "none",
+            "guest_additions_mode": "disable",
+            "virtualbox_version_file": "",
             "shutdown_command": "sudo shutdown now",
             "headless": "false",
             "bundle_iso": true,
