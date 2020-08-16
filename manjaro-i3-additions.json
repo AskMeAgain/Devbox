@@ -13,12 +13,12 @@
             "ssh_password": "1234",
             "shutdown_command": "echo '1234' | sudo -S shutdown now",
             "boot_command": [
-                "<wait15><leftSuperOn><enter><leftSuperOff><wait>",
-                "sudo -s<enter><wait>1234<enter><wait>",
-                "echo 'X11Forwarding yes' >> /etc/ssh/sshd_config<enter><wait>",
-                "echo 'X11UseLocalhost no' >> /etc/ssh/ssh_config<enter><wait>",
-                "exit<enter><wait>",
-                "systemctl start sshd.service<enter><wait>1234<enter>"
+                "<wait15><leftSuperOn><enter><leftSuperOff><wait2>",
+                "sudo -s<enter><wait>1234<enter><wait2>",
+                "echo 'X11Forwarding yes' >> /etc/ssh/sshd_config<enter><wait2>",
+                "echo 'X11UseLocalhost no' >> /etc/ssh/ssh_config<enter><wait2>",
+                "exit<enter><wait2>",
+                "systemctl start sshd.service<enter><wait2>1234<enter>"
             ]
         }
     ],
@@ -26,12 +26,12 @@
         {
             "type": "file",
             "source": "./scripts/",
-            "destination": "/home/{{user `username`}}/Downloads"
+            "destination": "~/Downloads"
         },
         {
             "type": "file",
             "source": "./images/",
-            "destination": "/home/{{user `username`}}/Downloads"
+            "destination": "~/Downloads"
         },
         {
             "type": "shell",

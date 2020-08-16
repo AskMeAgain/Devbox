@@ -26,7 +26,7 @@
             "headless": "false",
             "bundle_iso": true,
             "cpus": 8,
-            "vm_name": "{{user `username`}}",
+            "vm_name": "{{user `vmname`}}",
             "memory": 40000,
             "vboxmanage": [
                 [
