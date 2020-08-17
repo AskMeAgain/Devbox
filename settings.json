@@ -1,4 +1,5 @@
 {
     "username": "dev",
-    "vmname": "testvm2"
+    "vmname": "i3v3.1",
+    "baseimage": "manjaro-i3-base"
 }

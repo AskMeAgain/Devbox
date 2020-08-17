@@ -9,6 +9,7 @@ quake-specific-monitor=0
 terminal-title-show-when-single=false
 terminal-title-style='none'
 theme-variant='light'
+unsafe-paste-alert=false
 use-tabs=true
 window-style='borderless'
 
