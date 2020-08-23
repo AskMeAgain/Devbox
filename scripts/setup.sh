@@ -34,3 +34,7 @@ yay --save --answerclean All
 yay --save --answerdiff None
 echo '1234' | yay -S yadm-git --sudoloop --sudoflags -S
 
+#loading wallpaper
+curl $1 > ~/wallpaper.jpg
+
+

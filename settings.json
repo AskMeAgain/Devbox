@@ -1,6 +1,7 @@
 {
     "username": "dev",
-    "vmname": "i3v4.11",
+    "vmname": "i3v5.0",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
+    "background-image": "http://wallpaperswide.com/download/white_winter-wallpaper-1920x1080.jpg",
     "baseimage": "manjaro-i3-base"
 }

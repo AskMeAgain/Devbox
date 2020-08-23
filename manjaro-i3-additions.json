@@ -29,17 +29,16 @@
             "destination": "~/Downloads"
         },
         {
-            "type": "file",
-            "source": "./images/",
-            "destination": "~/Downloads"
-        },
-        {
             "type": "shell",
-            "inline": "cd ~/Downloads/ && bash ./setupBase.sh"
+            "inline": "cd ~/Downloads/ && bash ./setup.sh {{user `background-image`}}"
         },
         {
             "type": "shell",
             "inline": "yadm clone {{user `dotfiles-git`}}"
+        },
+        {
+            "type": "shell",
+            "inline": "echo 'exec --no-startup-id feh --bg-fill ~/wallpaper.jpg' >> ~/.i3/config"
         }
     ]
 }
