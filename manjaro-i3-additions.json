@@ -1,7 +1,7 @@
 {
     "variables": {
         "name": "dev",
-        "disksize": "20480"
+        "disksize": "{{user `disksize`}}"
     },
     "builders": [
         {
@@ -10,35 +10,31 @@
             "type": "virtualbox-ovf",
             "source_path": "./output-virtualbox-iso/{{user `baseimage`}}.ovf",
             "ssh_username": "{{user `username`}}",
-            "ssh_password": "1234",
-            "shutdown_command": "echo '1234' | sudo -S shutdown now",
+            "ssh_password": "{{user `password`}}",
+            "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
             "boot_command": [
                 "<wait15><leftSuperOn><enter><leftSuperOff><wait2>",
-                "sudo -s<enter><wait>1234<enter><wait2>",
+                "sudo -s<enter><wait>{{user `password`}}<enter><wait2>",
                 "echo 'X11Forwarding yes' >> /etc/ssh/sshd_config<enter><wait2>",
                 "echo 'X11UseLocalhost no' >> /etc/ssh/ssh_config<enter><wait2>",
                 "exit<enter><wait2>",
-                "systemctl start sshd.service<enter><wait2>1234<enter>"
+                "systemctl start sshd.service<enter><wait2>{{user `password`}}<enter>"
             ]
         }
     ],
     "provisioners": [
         {
             "type": "file",
-            "source": "./scripts/",
-            "destination": "~/Downloads"
+            "source": "./download.sh",
+            "destination": "~/download.sh"
         },
         {
             "type": "shell",
-            "inline": "cd ~/Downloads/ && bash ./setup.sh {{user `background-image`}} {{user `theme-url`}}"
+            "inline": "bash ~/download.sh {{user `password`}} {{user `dotfiles-git`}}"
         },
         {
             "type": "shell",
-            "inline": "yadm clone {{user `dotfiles-git`}}"
-        },
-        {
-            "type": "shell",
-            "inline": "echo 'exec --no-startup-id feh --bg-fill ~/wallpaper.jpg' >> ~/.i3/config"
+            "inline": "bash ~/setup.sh {{user `password`}} {{user `dotfiles-git`}}"
         }
     ]
 }
