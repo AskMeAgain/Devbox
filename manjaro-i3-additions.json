@@ -35,7 +35,11 @@
         },
         {
             "type": "shell",
-            "inline": "cd ~/Downloads/ && bash ./setup.sh"
+            "inline": "cd ~/Downloads/ && bash ./setupBase.sh"
+        },
+        {
+            "type": "shell",
+            "inline": "yadm clone {{user `dotfiles-git`}}"
         }
     ]
 }

@@ -1,5 +1,6 @@
 {
     "username": "dev",
-    "vmname": "i3v3.1",
+    "vmname": "i3v4.11",
+    "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
     "baseimage": "manjaro-i3-base"
 }
