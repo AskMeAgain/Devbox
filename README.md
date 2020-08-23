@@ -26,6 +26,12 @@ The vm will have the following applications installed:
 * docker
 * feh
 
+## Compatible themes
+
+Here is a list with compatible git repos, where you can just switch out the git repo link in the settings.json file and it will work out of the box
+
+* https://github.com/AskMeAgain/orchid.git (by me)
+
 ## Two Step Installation
 
 Packer will first download the i3 manjaro iso file and guide you through the installation (english keyboard, english OS).
