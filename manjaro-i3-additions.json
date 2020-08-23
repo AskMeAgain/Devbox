@@ -30,7 +30,7 @@
         },
         {
             "type": "shell",
-            "inline": "cd ~/Downloads/ && bash ./setup.sh {{user `background-image`}}"
+            "inline": "cd ~/Downloads/ && bash ./setup.sh {{user `background-image`}} {{user `theme-url`}}"
         },
         {
             "type": "shell",
