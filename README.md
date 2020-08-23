@@ -10,21 +10,22 @@ Packer from HashiCorp needs to be installed and available via PATH. VirtualBox f
 
 ## Installation
 
-Edit the settings.json file as you wish and provide your own git repository with setup file and dotfiles.
+Pull this repository, then edit the settings.json file as you wish and provide a compatible git repo with setup file and dotfiles.
 Execute create-vm.bat and everything will happen automatically. After everything is done, startup virtual box and the vm will be ready.
 
 ## Make your own setup compatible with Devbox
 
 You can orient yourself at this repo here (https://github.com/AskMeAgain/orchid.git). 
 
-The dotfiles will be installed by yadm, so please provide a similiar structure in your repo.
-The repo also should be completly self contained: a setup.sh script which will have the sudo password as $1 and the git repo of itself as $2
+The dotfiles will be installed by yadm, so please provide a compatible structure in your repo.
+The repo also should be completly self contained: a setup.sh script which will have the sudo password as $1 and the git repo of itself as $2 and
+will install all the needed dependencies.
 
 ## Compatible themes
 
 Here is a list with compatible git repos, where you can just switch out the git repo link in the settings.json file and it will work out of the box
 
-* https://github.com/AskMeAgain/orchid.git (by me)
+* https://github.com/AskMeAgain/orchid.git (light theme by me)
 
 ## Two Step Installation
 
