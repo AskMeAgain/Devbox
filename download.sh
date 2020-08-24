@@ -8,4 +8,8 @@ yay --save --answerclean All
 yay --save --answerdiff None
 echo $1 | yay -S yadm-git --sudoloop --sudoflags -S
 
-yadm clone $2
+yadm clone $2 --no-bootstrap
+
+chmod +x ~/.config/yadm/bootstrap
+
+yadm bootstrap

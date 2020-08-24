@@ -1,6 +1,6 @@
 {
     "username": "dev",
-    "vmname": "i3v5.2",
+    "vmname": "i3v5.3",
     "disksize": "20480",
     "password": "1234",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",

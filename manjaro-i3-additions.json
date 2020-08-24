@@ -31,10 +31,6 @@
         {
             "type": "shell",
             "inline": "bash ~/download.sh {{user `password`}} {{user `dotfiles-git`}}"
-        },
-        {
-            "type": "shell",
-            "inline": "bash ~/setup.sh {{user `password`}} {{user `dotfiles-git`}}"
         }
     ]
 }
