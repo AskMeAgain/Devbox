@@ -13,8 +13,8 @@
             "ssh_password": "{{user `password`}}",
             "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
             "boot_command": [
-                "<wait15><leftSuperOn><enter><leftSuperOff><wait2>",
-                "sudo -s<enter><wait>{{user `password`}}<enter><wait2>",
+                "<wait19><leftSuperOn><enter><leftSuperOff><wait2>",
+                "sudo -s<enter><wait2>{{user `password`}}<enter><wait2>",
                 "echo 'X11Forwarding yes' >> /etc/ssh/sshd_config<enter><wait2>",
                 "echo 'X11UseLocalhost no' >> /etc/ssh/ssh_config<enter><wait2>",
                 "exit<enter><wait2>",
