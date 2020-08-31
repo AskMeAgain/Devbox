@@ -1,7 +1,8 @@
 {
     "username": "dev",
     "password": "1234",
-    "vmname": "i3v5.4",
+    "vmname": "i3v6.0",
+    "sharedfolder": "C:\\Users\\Kelvin\\Documents\\SharedFolder\\",
     "disksize": "20480",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
     "baseimage": "manjaro-i3-base"
