@@ -11,19 +11,19 @@ Packer from HashiCorp needs to be installed and available via PATH. VirtualBox f
 ## Installation
 
 Pull this repository, then edit the settings.json file as you wish and provide a compatible git repo with setup file and dotfiles.
-Execute create-vm.bat and everything will happen automatically. After everything is done, startup virtual box and the vm will be ready.
+Execute create-vm.bat and everything will happen automatically. After everything is done, startup virtual box and the vm will be ready as specified by the provided git repo
 
 ## Make your own setup compatible with Devbox
 
-You can orient yourself at this repo here (https://github.com/AskMeAgain/orchid.git). 
+The dotfiles will be installed by yadm, so please provide a compatible structure in your repo. 
+This project **expects** a ~/.config/yadm/bootstrap file which will be execute by yadm later for setting up the vm. Make sure to provide one, even if its empty.
+The root password is 1234, make sure that you change it after your setup is done.
 
-The dotfiles will be installed by yadm, so please provide a compatible structure in your repo.
-The repo also should be completly self contained: a setup.sh script which will have the sudo password as $1 and the git repo of itself as $2 and
-will install all the needed dependencies.
+You can orient yourself at this repo here (https://github.com/AskMeAgain/orchid.git). 
 
 ## Compatible themes
 
-Here is a list with compatible git repos, where you can just switch out the git repo link in the settings.json file and it will work out of the box
+Here is a list with compatible git repos, where you can just switch out the git repo link in the settings.json file and it will work straight out of the box.
 
 * https://github.com/AskMeAgain/orchid.git (light theme by me)
 
@@ -34,4 +34,4 @@ Packer will first download the i3 manjaro iso file and will also install i3 for 
 After the base image is done, another packer script will install all the needed dependencies using the base image to create a new vm.
 
 The installation happens in two steps (first base image, then another image will be created where the provided git repo will be installed upon).
-This allows you to quickly build if you change the settings and want to try out different dotfiles.
+This allows you to quickly build if you changed the settings and want to try out different dotfiles.

@@ -1,7 +1,7 @@
 {
     "username": "dev",
     "password": "1234",
-    "vmname": "i3v6.0",
+    "vmname": "i3v6.1",
     "sharedfolder": "C:\\Users\\Kelvin\\Documents\\SharedFolder\\",
     "disksize": "20480",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
