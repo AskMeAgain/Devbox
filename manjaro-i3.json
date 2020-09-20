@@ -1,12 +1,9 @@
 {
-    "variables": {
-        "disksize": "20480"
-    },
     "builders": [
         {
             "type": "virtualbox-iso",
-            "iso_checksum": "sha1:0d9aa6b59f72c2d32749333520af8ef661e0a36b",
-            "iso_url": "https://osdn.net/frs/redir.php?m=dotsrc&f=%2Fstorage%2Fg%2Fm%2Fma%2Fmanjaro-community%2Fi3%2F20.0.3%2Fminimal%2Fmanjaro-i3-20.0.3-minimal-200606-linux56.iso",
+            "iso_checksum": "sha1:{{user `i3-image-hash`}}",
+            "iso_url": "{{user `i3-image`}}",
             "guest_os_type": "ArchLinux_64",
             "http_directory": "http",
             "boot_wait": "5s",
@@ -27,7 +24,7 @@
             "bundle_iso": true,
             "cpus": 8,
             "vm_name": "{{user `baseimage`}}",
-            "memory": 40000,
+            "memory": "{{user `memory`}}",
             "vboxmanage": [
                 [
                     "modifyvm",

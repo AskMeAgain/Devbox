@@ -6,7 +6,7 @@ for /f "tokens=2 delims=:" %%a in ('type settings.json^|find """baseimage"": "')
 :continue
 
 if NOT EXIST %firstPart%%dateid:~2,-2%.ovf (
-    packer build -var-file="settings.json" manjaro-i3.json
+    packer build -force -var-file="settings.json" manjaro-i3.json
 )
 
 timeout /T 1
