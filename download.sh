@@ -18,6 +18,4 @@ yadm clone $2 -f --no-bootstrap
 
 chmod +x ~/.config/yadm/bootstrap
 
-set DISPLAY_SIZE=$3
-
 yadm bootstrap

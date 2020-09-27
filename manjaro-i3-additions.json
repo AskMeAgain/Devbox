@@ -30,7 +30,7 @@
         },
         {
             "type": "shell",
-            "inline": "bash ~/download.sh {{user `password`}} {{user `dotfiles-git`}} {{user `display-size`}}"
+            "inline": "bash ~/download.sh {{user `password`}} {{user `dotfiles-git`}}"
         }
     ]
 }
