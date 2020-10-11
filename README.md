@@ -35,3 +35,7 @@ After the base image is done, another packer script will install all the needed 
 
 The installation happens in two steps (first base image, then another image will be created where the provided git repo will be installed upon).
 This allows you to quickly build if you changed the settings and want to try out different dotfiles.
+
+## Additional information
+
+Checkout this to make a shared folder working: https://gist.github.com/estorgio/1d679f962e8209f8a9232f7593683265

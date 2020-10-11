@@ -1,7 +1,7 @@
 {
     "username": "dev",
     "password": "1234",
-    "vmname": "i3v7.94",
+    "vmname": "i3v8.2",
     "memory": "40000",
     "i3-image-hash": "48898a8dffa901078221280b37a9bcdb55b69456",
     "i3-image": "https://osdn.net/frs/redir.php?m=dotsrc&f=%2Fstorage%2Fg%2Fm%2Fma%2Fmanjaro-community%2Fi3%2F20.1%2Fminimal%2Fmanjaro-i3-20.1-minimal-200912-linux58.iso",
