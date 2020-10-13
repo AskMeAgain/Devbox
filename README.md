@@ -19,8 +19,6 @@ The dotfiles will be installed by yadm, so please provide a compatible structure
 This project **expects** a ~/.config/yadm/bootstrap file which will be execute by yadm later to setup the vm. Make sure to provide one, even if its empty.
 The root password is 1234, make sure that you change it after your setup is done.
 
-You can orient yourself at this repo here (https://github.com/AskMeAgain/orchid.git). 
-
 ## Compatible themes
 
 Here is a list with compatible git repos, where its possible to switch out the dotfiles and you can expect fully compatibility.
