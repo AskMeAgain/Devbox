@@ -10,7 +10,7 @@
             "boot_command": [
                 "<enter><wait30><right><enter><wait2><leftSuperOn>i<leftSuperOff><wait4>",
                 "<leftAltOn><wait>e<up><up>n<wait>n<wait><leftAltOff><leftAltOn>n<leftAltOff><wait><tab><tab><tab><wait><spacebar><leftAltOn>n<leftAltOff><wait>",
-                "{{user `username`}}<tab><tab>{{user `username`}}box<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait1>i<wait>i",
+                "dev<tab><tab>devbox<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait1>i<wait>i",
                 "<wait120>d<leftAltOff>",
                 "<leftSuperOn><enter><leftSuperOff><wait1>shutdown now<enter>"
             ],
