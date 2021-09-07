@@ -1,15 +1,17 @@
 {
     "builders": [
         {
+            "vm_name": "{{user `vmname`}}-i3",
             "type": "virtualbox-iso",
+            "output_directory": ".\\output-i3\\",
             "iso_checksum": "sha1:{{user `i3-image-hash`}}",
             "iso_url": "{{user `i3-image`}}",
             "guest_os_type": "ArchLinux_64",
             "http_directory": "http",
             "boot_wait": "5s",
             "boot_command": [
-                "<enter><wait30><right><enter><wait2><leftSuperOn>i<leftSuperOff><wait4>",
-                "<leftAltOn><wait>e<up><up>n<wait>n<wait><leftAltOff><leftAltOn>n<leftAltOff><wait><tab><tab><tab><wait><spacebar><leftAltOn>n<leftAltOff><wait>",
+                "<enter><wait27><wait2><leftSuperOn>i<leftSuperOff><wait4>",
+                "<leftAltOn><wait>e<up><up>n<wait>n<wait>n<wait>n<wait><leftAltOff>",
                 "dev<tab><tab>devbox<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait1>i<wait>i",
                 "<wait120>d<leftAltOff>",
                 "<leftSuperOn><enter><leftSuperOff><wait1>shutdown now<enter>"
@@ -23,7 +25,6 @@
             "headless": "false",
             "bundle_iso": true,
             "cpus": 8,
-            "vm_name": "{{user `baseimage`}}",
             "memory": "{{user `memory`}}",
             "vboxmanage": [
                 [

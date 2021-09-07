@@ -1,4 +1,3 @@
 /packer_cache
-/output-virtualbox-iso
-/output-virtualbox-ovf
+/output*
 DevBox.code-workspace

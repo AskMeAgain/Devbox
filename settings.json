@@ -1,10 +1,9 @@
 {
     "password": "1234",
-    "vmname": "i3v11.0",
-    "memory": "40000",
-    "i3-image-hash": "48898a8dffa901078221280b37a9bcdb55b69456",
-    "i3-image": "https://osdn.net/frs/redir.php?m=dotsrc&f=%2Fstorage%2Fg%2Fm%2Fma%2Fmanjaro-community%2Fi3%2F20.1%2Fminimal%2Fmanjaro-i3-20.1-minimal-200912-linux58.iso",
+    "memory": "12000",
+    "i3-image-hash": "681e78e48587c23e255bb33282b7de363b8bf3d0",
+    "i3-image": "https://download.manjaro.org/i3/21.1.0/manjaro-i3-21.1.0-minimal-210823-linux513.iso",
     "disksize": "20480",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
-    "baseimage": "manjaro-i3-base-v3"
+    "vmname": "i3v13"
 }
