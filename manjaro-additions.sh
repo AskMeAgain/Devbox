@@ -15,8 +15,14 @@ echo "--- installing yadm ---"
 yay -S yadm-git --noprovides
 
 echo "--- cloning provided repo ---"
+
 yadm clone $2 -f --no-bootstrap
+
+yadm rm --cached -r .
+yadm reset --hard
+
 chmod +x ~/.config/yadm/bootstrap
 
 echo "--- executing bootstrap ---"
+
 yadm bootstrap
