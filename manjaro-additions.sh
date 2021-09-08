@@ -1,8 +1,10 @@
 #!/bin/sh -e
 
-echo "--- local to DE ---"
-echo "1234" | sudo -S localectl set-keymap de
+echo "--- turning sudo off ---"
 echo "1234" | sudo -S bash -c 'echo "dev ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)'
+
+echo "--- local to DE ---"
+sudo localectl set-keymap de
 
 echo "--- installing yay ---"
 sudo pacman -S yay --noconfirm
