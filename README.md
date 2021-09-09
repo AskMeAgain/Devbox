@@ -1,12 +1,12 @@
 # Devbox
 
-Devbox is a project where you can provision a complete programming environment with i3 and Manjaro, fully automated, in VirtualBox. Customization is possible by changing the settings.json file and providing another git repository with different setup/dotfiles.
-Currently only i3 is supported and i guess this will be the end of it too as i3 is just perfect.
+Devbox is a project where you can provision a complete programming environment with i3 and Manjaro, fully automated in VirtualBox. Customization is possible by changing the settings.json file and providing another git repository with different setup/dotfiles.
+Currently only i3 is supported and i guess this will be the end of it too as i3 is just good enough.
 Iam open for any pullrequests if you would like to add another base image.
 
 ## Dependencies
 
-Packer from HashiCorp needs to be installed and available via PATH variable. VirtualBox from Oracle is also needed (iam using 6.12 currently).
+VirtualBox from Oracle is needed. Packer is downloaded automatically via script.
 
 ## Installation
 
@@ -27,11 +27,13 @@ Here is a list with compatible git repos, where its possible to switch out the d
 
 ### What is happening in this repo?
 
-Packer will first download the i3 manjaro iso file and will also install i3 for you (english keyboard, english OS).
+Packer will be downloaded automatically. Then packer will first download the i3 manjaro iso file and will also install i3 for you (english keyboard, english OS).
 
-After the base image is done, another packer script will install all the needed dependencies using the base image to create a new image
+After the base image is done, another packer script will update the manjaro dependencies.
 
-The installation happens in two steps (first base image, then another image will be created where the provided git repo will be installed upon).
+After the updating step, another image is created which runs the bootstrap file via yadm.
+
+The installation happens in 3 steps (first base image, then updated image,then another image will be created where the provided git repo will be installed upon).
 This allows you to quickly iterate on the same base file.
 
 ### Additional information
