@@ -5,11 +5,11 @@
     },
     "builders": [
         {
-            "vm_name": "{{user `vmname`}}-additions",
+            "vm_name": "{{user `vmname`}}-updated",
             "keep_registered": true,
             "type": "virtualbox-ovf",
-            "source_path": "./output-updated/{{user `vmname`}}-updated.ovf",
-            "output_directory": ".\\output-additions\\",
+            "source_path": "./i3/output-i3/{{user `vmname`}}-i3.ovf",
+            "output_directory": "./i3/output-updated/",
             "ssh_username": "dev",
             "ssh_password": "{{user `password`}}",
             "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
@@ -22,12 +22,12 @@
     "provisioners": [
         {
             "type": "file",
-            "source": "./manjaro-additions.sh",
-            "destination": "~/manjaro-additions.sh"
+            "source": "./scripts/update-manjaro.sh",
+            "destination": "~/update-manjaro.sh"
         },
         {
             "type": "shell",
-            "inline": "bash ~/manjaro-additions.sh {{user `password`}} {{user `dotfiles-git`}}"
+            "inline": "bash ~/update-manjaro.sh {{user `password`}} {{user `dotfiles-git`}}"
         }
     ]
 }
