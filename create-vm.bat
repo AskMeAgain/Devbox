@@ -26,19 +26,19 @@ for /f "tokens=2 delims=:" %%a in ('type settings.json^|find """vmname"": "') do
 
 echo --------------- Building base i3 ovf 
 if NOT EXIST %firstPart%%dateid:~2,-2%-i3.ovf (
-    .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3.json
+    .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3.json || @RD /S /Q %firstPart% && exit 1
 )
 
 timeout /T 2 >NUL
 
 echo --------------- building up to date ovf 
 if NOT EXIST %secondPart%%dateid:~2,-2%-updated.ovf (
-    .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3-updated.json
+    .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3-updated.json || @RD /S /Q %secondPart% && exit 1
 )
 
 timeout /T 2 >NUL
 
 echo --------------- adding additions 
 if NOT EXIST %thirdPart%%dateid:~2,-2%-additions.ovf (
-    .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3-additions.json
+    .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3-additions.json || @RD /S /Q %thirdPart% && exit 1
 )

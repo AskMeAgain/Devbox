@@ -1,7 +1,7 @@
 {
     "builders": [
         {
-            "vm_name": "{{user `vmname`}}-i3",
+            "vm_name": "{{user `vmname`}}-temp1",
             "type": "virtualbox-iso",
             "output_directory": "./i3/output-i3/",
             "iso_checksum": "sha1:{{user `i3-image-hash`}}",
@@ -9,11 +9,11 @@
             "guest_os_type": "ArchLinux_64",
             "boot_wait": "5s",
             "boot_command": [
-                "<enter><wait27><wait2><leftSuperOn>i<leftSuperOff><wait4>",
-                "<leftAltOn><wait>e<up><up>n<wait>n<wait>n<wait>n<wait><leftAltOff>",
-                "dev<tab><tab>devbox<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait1>i<wait>i",
-                "<wait120>d<leftAltOff>",
-                "<leftSuperOn><enter><leftSuperOff><wait1>shutdown now<enter>"
+                "<enter><wait30><wait4><leftSuperOn>i<leftSuperOff><wait6>",
+                "<leftAltOn><wait3>e<up><up>n<wait3>n<wait3>n<wait3>n<wait3><leftAltOff>",
+                "dev<tab><tab>devbox<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait3>i<wait3>i",
+                "<wait140>d<leftAltOff>",
+                "<leftSuperOn><enter><leftSuperOff><wait3>shutdown now<enter>"
             ],
             "disk_size": "{{user `disksize`}}",
             "hard_drive_interface": "sata",

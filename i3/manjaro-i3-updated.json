@@ -5,10 +5,9 @@
     },
     "builders": [
         {
-            "vm_name": "{{user `vmname`}}-updated",
-            "keep_registered": true,
+            "vm_name": "{{user `vmname`}}-temp2",
             "type": "virtualbox-ovf",
-            "source_path": "./i3/output-i3/{{user `vmname`}}-i3.ovf",
+            "source_path": "./i3/output-i3/{{user `vmname`}}-temp1.ovf",
             "output_directory": "./i3/output-updated/",
             "ssh_username": "dev",
             "ssh_password": "{{user `password`}}",
