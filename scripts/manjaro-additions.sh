@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 echo "--- turning sudo off ---"
-echo "1234" | sudo -S bash -c 'echo "dev ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)'
+echo "1234" | sudo -S sh -c 'echo "dev ALL=(ALL:ALL) NOPASSWD: ALL" | tee /etc/sudoers.d/dont-prompt-for-sudo-password'
 
 echo "--- local to DE ---"
 sudo localectl set-keymap de
@@ -28,3 +28,5 @@ chmod +x ~/.config/yadm/bootstrap
 echo "--- executing bootstrap ---"
 
 yadm bootstrap
+
+echo "1234" | sudo -S rm -f /etc/sudoers.d/dont-prompt-for-sudo-password

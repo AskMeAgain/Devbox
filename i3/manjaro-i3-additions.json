@@ -7,6 +7,7 @@
         {
             "vm_name": "{{user `vmname`}}",
             "type": "virtualbox-ovf",
+            "keep_registered": true,
             "source_path": "./i3/output-updated/{{user `vmname`}}-temp2.ovf",
             "output_directory": "./i3/output-additions",
             "ssh_username": "dev",
