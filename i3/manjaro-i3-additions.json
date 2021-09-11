@@ -1,8 +1,4 @@
 {
-    "variables": {
-        "name": "dev",
-        "disksize": "{{user `disksize`}}"
-    },
     "builders": [
         {
             "vm_name": "{{user `vmname`}}",
@@ -10,7 +6,7 @@
             "keep_registered": true,
             "source_path": "./i3/output-updated/{{user `vmname`}}-temp2.ovf",
             "output_directory": "./i3/output-additions",
-            "ssh_username": "dev",
+            "ssh_username": "{{user `user-name`}}",
             "ssh_password": "{{user `password`}}",
             "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
             "boot_command": [
@@ -23,6 +19,12 @@
                     "{{.Name}}",
                     "GUI/SuppressMessages",
                     "all"
+                ],
+                [
+                    "modifyvm",
+                    "{{.Name}}",
+                    "--monitorcount",
+                    "{{user `monitor-count`}}"
                 ],
                 [
                     "setextradata",

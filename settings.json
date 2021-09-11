@@ -4,11 +4,11 @@
     "cpu-count": "4",
     "graphics-controller": "vboxsvga",
     "shared-folder-name": "./i3/{{user `vmname`}}-shared/",
-    "monitor-count": "2",
+    "monitor-count": "1",
     "memory": "12000",
     "i3-image-hash": "681e78e48587c23e255bb33282b7de363b8bf3d0",
     "i3-image": "https://download.manjaro.org/i3/21.1.0/manjaro-i3-21.1.0-minimal-210823-linux513.iso",
     "disksize": "40480",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
-    "vmname": "integTest-6"
+    "vmname": "integTest-8"
 }

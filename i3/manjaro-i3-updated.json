@@ -1,8 +1,4 @@
 {
-    "variables": {
-        "name": "dev",
-        "disksize": "{{user `disksize`}}"
-    },
     "builders": [
         {
             "vm_name": "{{user `vmname`}}-temp2",
@@ -16,20 +12,6 @@
             "boot_command": [
                 "<wait60><leftSuperOn><enter><leftSuperOff><wait5>",
                 "systemctl start sshd.service<enter><wait5>{{user `password`}}<enter>"
-            ],
-            "vboxmanage": [
-                [
-                    "setextradata",
-                    "{{.Name}}",
-                    "GUI/SuppressMessages",
-                    "all"
-                ],
-                [
-                    "setextradata",
-                    "{{.Name}}",
-                    "GUI/Fullscreen",
-                    "true"
-                ]
             ]
         }
     ],

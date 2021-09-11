@@ -30,13 +30,7 @@
                     "modifyvm",
                     "{{.Name}}",
                     "--vram",
-                    "100"
-                ],
-                [
-                    "modifyvm",
-                    "{{.Name}}",
-                    "--monitorcount",
-                    "{{user `monitor-count`}}"
+                    "128"
                 ],
                 [
                     "sharedfolder",
