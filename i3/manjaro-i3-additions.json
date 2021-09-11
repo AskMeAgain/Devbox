@@ -16,6 +16,20 @@
             "boot_command": [
                 "<wait24><leftSuperOn><enter><leftSuperOff><wait3>",
                 "systemctl start sshd.service<enter><wait3>{{user `password`}}<enter>"
+            ],
+            "vboxmanage": [
+                [
+                    "setextradata",
+                    "{{.Name}}",
+                    "GUI/SuppressMessages",
+                    "all"
+                ],
+                [
+                    "setextradata",
+                    "{{.Name}}",
+                    "GUI/Fullscreen",
+                    "true"
+                ]
             ]
         }
     ],
@@ -27,7 +41,7 @@
         },
         {
             "type": "shell",
-            "inline": "bash ~/manjaro-additions.sh {{user `password`}} {{user `dotfiles-git`}}"
+            "inline": "bash ~/manjaro-additions.sh {{user `password`}} {{user `dotfiles-git`}} {{user `user-name`}}"
         }
     ]
 }

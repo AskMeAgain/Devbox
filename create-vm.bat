@@ -24,20 +24,37 @@ for /f "tokens=2 delims=:" %%a in ('type settings.json^|find """vmname"": "') do
 )
 :continue
 
+set vmname=%dateid:~2,-2%
+
+echo --------------- vm name is %vmname%
+echo --------------- creating shared folder
+if NOT EXIST ./i3/%vmname%-shared\ (
+    mkdir "./i3/%vmname%-shared"
+)
+
 echo --------------- Building base i3 ovf 
-if NOT EXIST %firstPart%%dateid:~2,-2%-temp1.ovf (
+if NOT EXIST %firstPart%%vmname%-temp1.ovf (
     .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3.json || @RD /S /Q %firstPart% && exit 1
+) else (
+    echo ---------------- base i3 ovf already exists
 )
 
 timeout /T 2 >NUL
 
 echo --------------- building up to date ovf 
-if NOT EXIST %secondPart%%dateid:~2,-2%-temp2.ovf (
+if NOT EXIST %secondPart%%vmname%-temp2.ovf (
     .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3-updated.json || @RD /S /Q %secondPart% && exit 1
+) else (
+    echo ---------------- up to date i3 ovf already exists
 )
 
 timeout /T 2 >NUL
 
 echo --------------- adding additions 
-@RD /S /Q %thirdPart%
+if EXIST %thirdPart%\ ( 
+    echo --------------- deleting old additions
+    @RD /S /Q %thirdPart%
+) else (
+    echo --------------- installing fresh
+)
 .\packer.exe build -force -var-file="settings.json" i3\manjaro-i3-additions.json
