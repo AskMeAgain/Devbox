@@ -12,7 +12,7 @@
                 "<enter><wait50><wait4><leftSuperOn>i<leftSuperOff><wait10>",
                 "<leftAltOn><wait3>e<up><up>n<wait3>n<wait3>n<wait3>n<wait3><leftAltOff>",
                 "dev<tab><tab>devbox<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait3>i<wait3>i",
-                "<wait200>d<leftAltOff>",
+                "<wait220>d<leftAltOff>",
                 "<leftSuperOn><enter><leftSuperOff><wait3>shutdown now<enter>"
             ],
             "disk_size": "{{user `disksize`}}",

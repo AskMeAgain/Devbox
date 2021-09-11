@@ -10,5 +10,5 @@
     "i3-image": "https://download.manjaro.org/i3/21.1.0/manjaro-i3-21.1.0-minimal-210823-linux513.iso",
     "disksize": "40480",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
-    "vmname": "integTest-8"
+    "vmname": "new-project"
 }
