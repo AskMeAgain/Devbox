@@ -11,7 +11,7 @@
             "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
             "boot_command": [
                 "<wait24><leftSuperOn><enter><leftSuperOff><wait3>",
-                "systemctl start sshd.service<enter><wait3>{{user `password`}}<enter>"
+                "systemctl start sshd.service<enter><wait2>{{user `password`}}<enter>"
             ],
             "vboxmanage": [
                 [
