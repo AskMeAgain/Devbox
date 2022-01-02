@@ -15,12 +15,6 @@
             ],
             "vboxmanage": [
                 [
-                    "setextradata",
-                    "{{.Name}}",
-                    "GUI/SuppressMessages",
-                    "all"
-                ],
-                [
                     "modifyvm",
                     "{{.Name}}",
                     "--monitorcount",
