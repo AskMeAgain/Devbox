@@ -23,6 +23,12 @@
                 [
                     "setextradata",
                     "{{.Name}}",
+                    "GUI/SuppressMessages",
+                    "all"
+                ],
+                [
+                    "setextradata",
+                    "{{.Name}}",
                     "GUI/Fullscreen",
                     "true"
                 ]

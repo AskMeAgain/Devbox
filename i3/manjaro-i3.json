@@ -9,9 +9,9 @@
             "guest_os_type": "ArchLinux_64",
             "boot_wait": "5s",
             "boot_command": [
-                "<enter><wait50><wait4><leftSuperOn>i<leftSuperOff><wait10>",
-                "<leftAltOn><wait3>e<up><up>n<wait3>n<wait3>n<wait3>n<wait3><leftAltOff>",
-                "dev<tab><tab>devbox<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait3>i<wait3>i",
+                "<enter><wait50><wait4><leftSuperOn>i<leftSuperOff><wait20>",
+                "<leftAltOn><wait10>e<up><up>n<wait10>n<wait10>n<wait10>n<wait10><leftAltOff>",
+                "dev<tab><tab>devbox<tab>1234<tab>1234<tab><spacebar><tab><spacebar><leftAltOn>n<wait10>i<wait10>i",
                 "<wait220>d<leftAltOff>",
                 "<leftSuperOn><enter><leftSuperOff><wait3>shutdown now<enter>"
             ],
