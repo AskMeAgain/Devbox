@@ -30,8 +30,8 @@
             "type": "ansible-local",
             "playbook_file": "./manjaro-i3/ansible.yml",
             "extra_arguments": [
-                "-e",
-                "\"ansible_sudo_pass={{ user `password`}}\""
+                "--extra-vars",
+                "\"ansible_sudo_pass={{ user `password`}} username={{ user `user-name`}} dotfiles_git={{ user `dotfiles-git`}}\""
             ]
         }
     ]

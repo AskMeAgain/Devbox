@@ -1,28 +1,30 @@
 - name: test run
   hosts: localhost
   connection: local
+  environment:
+    DEVBOX_USERNAME: "{{ username }}"
 
   tasks:
     - name: Downloading yadm
       ansible.builtin.get_url:
         url: https://github.com/TheLocehiliosan/yadm/raw/master/yadm
-        dest: /home/dev/yadm
+        dest: /home/{{ username }}/yadm
 
     - name: Making yadm executable
       copy:
-        src: /home/dev/yadm
+        src: /home/{{ username }}/yadm
         dest: /usr/local/bin/yadm
         mode: a+x
       become: yes
 
     - name: Creates shared folder
       file:
-        path: /home/dev/shared
+        path: /home/{{ username }}/shared
         state: directory
 
     - name: Mount up shared folder
       ansible.posix.mount:
-        path: /home/dev/shared
+        path: /home/{{ username }}/shared
         src: shared
         fstype: vboxsf
         state: present
@@ -32,7 +34,7 @@
       command: "{{ item }}"
       with_items:
         - "yadm init"
-        - "yadm remote add origin https://github.com/AskMeAgain/orchid.git"
+        - "yadm remote add origin {{ dotfiles_git }}"
         - "yadm fetch"
         - "yadm checkout -t origin/master -f"
 
