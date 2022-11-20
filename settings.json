@@ -10,5 +10,5 @@
     "i3-image": "https://download.manjaro.org/i3/21.3.7/manjaro-i3-21.3.7-minimal-220817-linux515.iso",
     "disksize": "50480",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
-    "vmname": "VM-Ansible-Test-14"
+    "vmname": "VM-Ansible-Test-16"
 }

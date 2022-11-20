@@ -1,0 +1,41 @@
+- name: test run
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Downloading yadm
+      ansible.builtin.get_url:
+        url: https://github.com/TheLocehiliosan/yadm/raw/master/yadm
+        dest: /home/dev/yadm
+
+    - name: Making yadm executable
+      copy:
+        src: /home/dev/yadm
+        dest: /usr/local/bin/yadm
+        mode: a+x
+      become: yes
+
+    - name: Creates shared folder
+      file:
+        path: /home/dev/shared
+        state: directory
+
+    - name: Mount up shared folder
+      ansible.posix.mount:
+        path: /home/dev/shared
+        src: shared
+        fstype: vboxsf
+        state: present
+      become: yes
+
+    - name: cloning dotfiles repo
+      command: "{{ item }}"
+      with_items:
+        - "yadm init"
+        - "yadm remote add origin https://github.com/AskMeAgain/orchid.git"
+        - "yadm fetch"
+        - "yadm checkout -t origin/master -f"
+
+    - name: executing yadm bootstrap
+      command: yadm bootstrap
+      ignore_errors: yes #so we can  fix the issues by hand in the VM

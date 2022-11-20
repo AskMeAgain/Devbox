@@ -3,7 +3,7 @@
         {
             "vm_name": "{{user `vmname`}}-temp1",
             "type": "virtualbox-iso",
-            "output_directory": "./packer_cache/outputs/manjaro-i3/",
+            "output_directory": "./packer_cache/outputs/manjaro-i3/os/",
             "iso_checksum": "sha1:{{user `i3-image-hash`}}",
             "iso_url": "{{user `i3-image`}}",
             "guest_os_type": "ArchLinux_64",
@@ -19,7 +19,10 @@
                 "sudo reboot now<enter>",
                 "<wait40><leftSuperOn><enter><leftSuperOff><wait3>",
                 "systemctl enable sshd.service<enter><wait3>{{user `password`}}<enter><wait3>",
-                "sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu ansible --noconfirm && ansible-galaxy collection install kewlfft.aur && sudo shutdown now<enter><wait3>1234<enter>"
+                "sudo pacman-mirrors --fasttrack 5 && ",
+                "sudo pacman -Syyu ansible --noconfirm && ",
+                "ansible-galaxy collection install kewlfft.aur && ",
+                "sudo shutdown now<enter><wait3>1234<enter>"
             ],
             "disk_size": "{{user `disksize`}}",
             "hard_drive_interface": "sata",
@@ -29,7 +32,6 @@
             "headless": "false",
             "bundle_iso": true,
             "cpus": "{{user `cpu-count`}}",
-            "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
             "memory": "{{user `memory`}}",
             "vboxmanage": [
                 [

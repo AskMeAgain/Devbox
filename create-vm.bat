@@ -1,8 +1,8 @@
 @ECHO OFF
 
-set firstPart=.\packer_cache\outputs\manjaro-i3\
+set firstPart=.\packer_cache\outputs\manjaro-i3\os\
 
-set PACKER_LOG=1
+REM set PACKER_LOG=1
 
 echo.
 echo --------------- Installing packer 
@@ -41,7 +41,7 @@ if NOT EXIST %firstPart%%vmname%-temp1.ovf (
 
 timeout /T 2 >NUL
 
-pause
 
-echo --------------- adding additions 
-.\packer.exe build -force -var-file="settings.json" manjaro-i3\manjaro-i3-additions.json
+
+echo --------------- applying user configs
+.\packer.exe build -force -var-file="settings.json" manjaro-i3\manjaro-i3-user-config.json
