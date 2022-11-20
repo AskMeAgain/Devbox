@@ -1,5 +1,4 @@
 /packer_cache
-/i3/output*
-/i3/*-shared
+/shared-folders
 DevBox.code-workspace
 packer.exe

@@ -4,15 +4,11 @@
             "vm_name": "{{user `vmname`}}",
             "type": "virtualbox-ovf",
             "keep_registered": true,
-            "source_path": "./i3/output-updated/{{user `vmname`}}-temp2.ovf",
-            "output_directory": "./i3/output-additions",
+            "source_path": "./packer_cache/outputs/manjaro-i3/{{user `vmname`}}-temp1.ovf",
+            "output_directory": "./manjaro-i3/output-additions",
             "ssh_username": "{{user `user-name`}}",
             "ssh_password": "{{user `password`}}",
             "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
-            "boot_command": [
-                "<wait24><leftSuperOn><enter><leftSuperOff><wait3>",
-                "systemctl start sshd.service<enter><wait2>{{user `password`}}<enter>"
-            ],
             "vboxmanage": [
                 [
                     "modifyvm",
@@ -25,12 +21,6 @@
                     "{{.Name}}",
                     "GUI/SuppressMessages",
                     "all"
-                ],
-                [
-                    "setextradata",
-                    "{{.Name}}",
-                    "GUI/Fullscreen",
-                    "true"
                 ]
             ]
         }
@@ -38,7 +28,7 @@
     "provisioners": [
         {
             "type": "file",
-            "source": "./scripts/manjaro-additions.sh",
+            "source": "./manjaro-i3/manjaro-additions.sh",
             "destination": "~/manjaro-additions.sh"
         },
         {
