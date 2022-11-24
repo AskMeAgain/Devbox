@@ -41,7 +41,5 @@ if NOT EXIST %firstPart%%vmname%-temp1.ovf (
 
 timeout /T 2 >NUL
 
-
-
 echo --------------- applying user configs
 .\packer.exe build -force -var-file="settings.json" manjaro-i3\manjaro-i3-user-config.json
