@@ -28,17 +28,15 @@ if NOT EXIST ./shared-folders/%vmname%-shared\ (
 )
 
 echo --- Building base ovf image ---
-if NOT EXIST .\packer_cache\outputs\%vmname%-temp1.ovf (
-    .\packer.exe build -force -var-file="settings.json" "provisioning-os/%type%/installation.json" || @RD /S /Q .\packer_cache\outputs\ && exit 1
+if NOT EXIST .\packer_cache\outputs\os\%vmname%-temp1.ovf (
+    .\packer.exe build -debug -force -var-file="settings.json" "provisioning-os/%type%/installation.json" || @RD /S /Q .\packer_cache\outputs\os && exit 1
 ) else (
     echo --- base ovf already exists ---
 )
 
-exit 0
-
 timeout /T 2 >NUL
 
 echo --------------- applying user configs
-.\packer.exe build -force -var-file="settings.json" packer/software-configuration.json
+.\packer.exe build -debug -force -var-file="settings.json" provisioning-packages/package-provisioning.json
 
 pause

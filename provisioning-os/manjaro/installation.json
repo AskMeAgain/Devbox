@@ -3,7 +3,7 @@
         {
             "vm_name": "{{user `vmname`}}-temp1",
             "type": "virtualbox-iso",
-            "output_directory": "./packer_cache/outputs/",
+            "output_directory": "./packer_cache/outputs/os/",
             "iso_checksum": "{{user `manjaro-image-hash`}}",
             "iso_url": "{{user `manjaro-image`}}",
             "guest_os_type": "ArchLinux_64",

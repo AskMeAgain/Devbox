@@ -13,9 +13,10 @@
             "boot_command": [
                 "<enter><wait60>archinstall --config https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_configuration.json ",
                 "--creds https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_credentials.json ",
-                "&& systemctl enable sshd.service && shutdown now<enter><wait5>",
-                "<down><down><down><down><down><enter><wait30><enter><enter><down><enter><enter><enter><enter><wait1>",
-                "<up><up><up><up><up><up><up><up><up><enter><enter><wait300>"
+                "&& reboot now<enter><wait5>",
+                "<down><down><down><down><down><enter><wait60><enter><enter><down><enter><enter><enter><enter><wait1>",
+                "<up><up><up><up><up><up><up><up><up><enter><enter><wait600><down><enter><wait100>dev<enter><wait1>1234<enter><wait1>",
+                "systemctl enable sshd.service<enter><wait1>shutdown now<enter>"
             ],
             "disk_size": "{{user `disksize`}}",
             "hard_drive_interface": "sata",
