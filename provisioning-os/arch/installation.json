@@ -11,8 +11,11 @@
             "shutdown_timeout": "10m",
             "disable_shutdown": true,
             "boot_command": [
-                "<enter>archinstall --config /home/user_configuration.json --creds /home/user_credentials.json<enter><wait5>",
-                "<down><down><down><down>"
+                "<enter><wait60>archinstall --config https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_configuration.json ",
+                "--creds https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_credentials.json ",
+                "&& systemctl enable sshd.service && shutdown now<enter><wait5>",
+                "<down><down><down><down><down><enter><wait30><enter><enter><down><enter><enter><enter><enter><wait1>",
+                "<up><up><up><up><up><up><up><up><up><enter><enter><wait300>"
             ],
             "disk_size": "{{user `disksize`}}",
             "hard_drive_interface": "sata",
@@ -56,18 +59,6 @@
                     "disabled"
                 ]
             ]
-        }
-    ],
-    "provisioners": [
-        {
-            "type": "file",
-            "source": "provisioning-os/arch/user_configuration.json",
-            "destination": "/home/user_configuration.json"
-        },
-        {
-            "type": "file",
-            "source": "provisioning-os/arch/user_credentials.json",
-            "destination": "/home/user_credentials.json"
         }
     ]
 }
