@@ -13,10 +13,10 @@
             "boot_command": [
                 "<enter><wait60>archinstall --config https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_configuration.json ",
                 "--creds https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_credentials.json ",
-                "&& shutdown now<enter><wait5>",
-                "<down><down><down><down><down><enter><wait60><enter><enter><down><enter><enter><enter><enter><wait1>",
-                "<up><up><up><up><up><up><up><up><up><enter><enter><wait600><enter>",
-                "systemctl enable sshd<enter><wait1>exit<enter>"
+                "&& reboot now<enter><wait5>",
+                "<down><down><down><down><down><enter><wait50><enter><enter><down><enter><enter><enter><enter><wait1>",
+                "<up><up><up><up><up><up><up><up><up><enter><enter><wait550><enter>",
+                "systemctl enable sshd<enter><wait1>exit<enter><wait100>dev<enter><wait1>1234<enter><wait1>ansible-galaxy collection install kewlfft.aur && shutdown now<enter>"
             ],
             "disk_size": "{{user `disksize`}}",
             "hard_drive_interface": "sata",

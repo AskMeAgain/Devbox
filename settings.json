@@ -12,6 +12,6 @@
     "manjaro-image-hash": "sha1:e7da7ab3d6f34e13526cd84230a4c4301737e21d",
     "manjaro-image": "https://download.manjaro.org/i3/21.3.7/manjaro-i3-21.3.7-minimal-220817-linux515.iso",
     "disksize": "50480",
-    "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
-    "vmname": "VM-Ansible-Test-29"
+    "dotfiles-git": "https://github.com/AskMeAgain/dotfiles.git",
+    "vmname": "VM-Ansible-Test-34"
 }
