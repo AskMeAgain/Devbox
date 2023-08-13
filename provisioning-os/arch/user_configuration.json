@@ -25,7 +25,7 @@
     "ntp": true,
     "offline": false,
     "packages": [
-        "ansible", "openssh"
+        "ansible", "openssh", "git"
     ],
     "parallel downloads": 0,
     "script": "guided",

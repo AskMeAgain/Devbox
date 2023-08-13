@@ -6,8 +6,8 @@
             "keep_registered": true,
             "source_path": "./packer_cache/outputs/os/{{user `vmname`}}-temp1.ovf",
             "output_directory": "./packer_cache/outputs/software",
-            "ssh_username": "{{user `user-name`}}",
-            "ssh_password": "{{user `password`}}",
+            "ssh_username": "dev",
+            "ssh_password": "1234",
             "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
             "vboxmanage": [
                 [
