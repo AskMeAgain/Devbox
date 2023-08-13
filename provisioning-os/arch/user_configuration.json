@@ -27,7 +27,7 @@
     "gfx_driver": "VMware / VirtualBox (open-source)",
     "desktop-environment": "i3",
     "profile": {
-        "path": "usr/lib/python3.11/site-packages/archinstall/profiles/desktop.py"
+        "path": "/usr/lib/python3.11/site-packages/archinstall/profiles/desktop.py"
     },
     "packages": [
         "ansible", "openssh", "git"
