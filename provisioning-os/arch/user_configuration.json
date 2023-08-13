@@ -1,0 +1,29 @@
+{
+    "additional-repositories": [],
+    "archinstall-language": "English",
+    "bootloader": "Grub",
+    "config_version": "2.6.0",
+    "debug": false,
+    "hostname": "archlinux",
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "kb_layout": "de",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US"
+    },
+    "network_config": {},
+    "no_pkg_lookups": false,
+    "ntp": true,
+    "offline": false,
+    "packages": [
+        "ansible"
+    ],
+    "parallel downloads": 0,
+    "script": "guided",
+    "silent": true,
+    "swap": true,
+    "timezone": "UTC",
+    "version": "2.6.0"
+}

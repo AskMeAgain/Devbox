@@ -1,4 +1,5 @@
 {
+    "type": "arch",
     "password": "1234",
     "user-name": "dev",
     "cpu-count": "4",
@@ -6,9 +7,11 @@
     "shared-folder-name": "./shared-folders/{{user `vmname`}}-shared/",
     "monitor-count": "1",
     "memory": "12000",
-    "manjaro-image-hash": "e7da7ab3d6f34e13526cd84230a4c4301737e21d",
+    "arch-image-hash": "sha256:3bf1287333de5c26663b70a17ce7573f15dc60780b140cbbd1c720338c0abac5",
+    "arch-image": "https://www.archlinux.de/download/iso/2023.08.01/archlinux-2023.08.01-x86_64.iso",
+    "manjaro-image-hash": "sha1:e7da7ab3d6f34e13526cd84230a4c4301737e21d",
     "manjaro-image": "https://download.manjaro.org/i3/21.3.7/manjaro-i3-21.3.7-minimal-220817-linux515.iso",
     "disksize": "50480",
     "dotfiles-git": "https://github.com/AskMeAgain/orchid.git",
-    "vmname": "VM-Ansible-Test-19"
+    "vmname": "VM-Ansible-Test-23"
 }

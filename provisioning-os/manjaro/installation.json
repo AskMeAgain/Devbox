@@ -3,8 +3,8 @@
         {
             "vm_name": "{{user `vmname`}}-temp1",
             "type": "virtualbox-iso",
-            "output_directory": "./packer_cache/outputs/manjaro-i3/os/",
-            "iso_checksum": "sha1:{{user `manjaro-image-hash`}}",
+            "output_directory": "./packer_cache/outputs/",
+            "iso_checksum": "{{user `manjaro-image-hash`}}",
             "iso_url": "{{user `manjaro-image`}}",
             "guest_os_type": "ArchLinux_64",
             "boot_wait": "5s",
