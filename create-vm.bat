@@ -1,6 +1,6 @@
 @ECHO OFF
 
-REM set PACKER_LOG=1
+set PACKER_LOG=1
 
 echo.
 echo --- Installing packer ---
@@ -29,7 +29,7 @@ if NOT EXIST ./shared-folders/%vmname%-shared\ (
 
 echo --- Building base ovf image ---
 if NOT EXIST .\packer_cache\outputs\os\%vmname%-temp1.ovf (
-    .\packer.exe build -debug -force -var-file="settings.json" "provisioning-os/%type%/installation.json" || @RD /S /Q .\packer_cache\outputs\os && exit 1
+    .\packer.exe build -force -var-file="settings.json" "provisioning-os/%type%/installation.json" || @RD /S /Q .\packer_cache\outputs\os && exit 1
 ) else (
     echo --- base ovf already exists ---
 )
@@ -37,6 +37,6 @@ if NOT EXIST .\packer_cache\outputs\os\%vmname%-temp1.ovf (
 timeout /T 2 >NUL
 
 echo --------------- applying user configs
-.\packer.exe build -debug -force -var-file="settings.json" provisioning-packages/package-provisioning.json
+.\packer.exe build -force -var-file="settings.json" provisioning-packages/package-provisioning.json
 
 pause
