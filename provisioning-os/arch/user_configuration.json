@@ -14,6 +14,13 @@
         "sys_lang": "en_US"
     },
     "network_config": {},
+    "nic": {
+        "dhcp": true,
+        "dns": null,
+        "gateway": null,
+        "ip": null,
+        "type": "nm"
+    },
     "no_pkg_lookups": false,
     "ntp": true,
     "offline": false,
