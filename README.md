@@ -1,39 +1,49 @@
 # Devbox
 
-Devbox is a project where you can provision a complete programming environment with Manjaro, fully automated in VirtualBox. Customization is possible by changing the settings.json file and providing another git repository with different setup/dotfiles.
-Currently only manjaro i3 version is supported.
+Devbox is a project that enables you to automatically set up a comprehensive programming environment within VirtualBox.
 
-Iam open for any pullrequests if you would like to add another base image.
+## Features
+
+* one click installation
+* shared folder into the VM automatically created
+* supported OS: Manjaro and Arch
+
+If you have a different base image in mind, your contributions are more than welcome through pull requests.
 
 ## Dependencies
 
-VirtualBox from Oracle is needed. Packer is downloaded automatically via script.
+VirtualBox from Oracle is needed. [Packer](https://www.packer.io/) is downloaded automatically via script.
 
 ## Installation
 
-Pull this repository, then edit the settings.json file as you wish and provide a compatible git repo with setup file and dotfiles.
-Execute create-vm.bat and everything will happen automatically. After everything is done, startup virtual box and the vm will be ready as specified by the provided git repo
+1. Pull this repository
+2. edit settings.json file as you wish
+    a. choose a good vm name
+    b. if you wish to install Manjaro, choose type "manjaro"
+    c. if you wisth to install ArchLinux, choose type "arch"
+3. run create-vm.bat
+4. wait 20 minutes
+5. start virtual box!
 
 ## Make your own setup compatible with Devbox
 
-The devbox provisioning **installs yadm, ansible and the aur helper** automatically.
+The provisioning uses [YADM](https://yadm.io/) to install your dotfiles. Provide a bootstrap file to install your needed software. **Ansible is installed on the OS and can be used in the bootstrap file**
 
-You can use your yadm setup to install missing dependencies via ansible.
+## Custom OS
 
-The dotfiles will be installed by [yadm](https://yadm.io/), so please provide a compatible structure in your repo. 
+If you want to provide another OS via a pullrequest. Take a look at the installation.json files of each OS. 
 
-## Compatible themes
+## Compatible dotfiles
 
-Here is a list with compatible git repos, where its possible to switch out the dotfiles and you can expect fully compatibility.
+Here is a list with compatible git repos:
 
-* https://github.com/AskMeAgain/orchid.git
+* https://github.com/AskMeAgain/dotfiles.git
 
 ### What is happening in this repo?
 
-Packer will be downloaded automatically if it doesnt exist. Then packer will first download the i3 manjaro iso file and will install i3 for you
+Packer will be downloaded automatically if it doesnt exist. Then packer will first download the iso file and will install the OS for you
 via key presses (english keyboard, english OS).
 
-It will then select a good mirror, update all packages and install ansible/ansible aur helper/ + yadm
+It will then update all packages and install [ansible](https://www.ansible.com/) + [YADM](https://yadm.io/)
 
-It will then pull in the git dotfiles and run the bootstrap file via ansible itself.
-
+It will then pull in the git dotfiles via yadm and run the bootstrap file of your dotfiles repo via ansible.
