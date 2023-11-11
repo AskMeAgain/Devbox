@@ -1,0 +1,66 @@
+{
+    "builders": [
+        {
+            "vm_name": "{{user `vmname`}}-temp1",
+            "type": "virtualbox-iso",
+            "output_directory": "./packer_cache/outputs/os/",
+            "iso_checksum": "{{user `arch-image-hash`}}",
+            "iso_url": "{{user `arch-image`}}",
+            "guest_os_type": "ArchLinux_64",
+            "boot_wait": "5s",
+            "shutdown_timeout": "10m",
+            "disable_shutdown": true,
+            "boot_command": [
+                "<enter><wait60>archinstall --config https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_configuration.json ",
+                "--creds https://raw.githubusercontent.com/AskMeAgain/Devbox/arch-installation/provisioning-os/arch/user_credentials.json ",
+                "&& reboot now<enter><wait5>",
+                "<down><down><down><down><down><enter><wait60><enter><enter><down><enter><enter><enter><enter><wait10>",
+                "<up><up><up><up><up><up><up><up><up><enter><enter><wait600><enter>",
+                "systemctl enable sshd<enter><wait1>exit<enter><wait100>",
+                "1234<enter><wait5><esc><wait1><leftAltOn><enter><leftAltOff><wait5>ansible-galaxy collection install kewlfft.aur && shutdown now<enter>"
+            ],
+            "disk_size": "{{user `disksize`}}",
+            "hard_drive_interface": "sata",
+            "guest_additions_mode": "disable",
+            "communicator": "none",
+            "virtualbox_version_file": "",
+            "headless": "false",
+            "bundle_iso": true,
+            "cpus": "{{user `cpu-count`}}",
+            "memory": "{{user `memory`}}",
+            "vboxmanage": [
+                [
+                    "modifyvm",
+                    "{{.Name}}",
+                    "--vram",
+                    "128"
+                ],
+                [
+                    "sharedfolder",
+                    "add",
+                    "{{.Name}}",
+                    "--name=shared",
+                    "--hostpath={{user `shared-folder-name`}}"
+                ],
+                [
+                    "modifyvm",
+                    "{{.Name}}",
+                    "--graphicscontroller",
+                    "{{user `graphics-controller`}}"
+                ],
+                [
+                    "modifyvm",
+                    "{{.Name}}",
+                    "--clipboard-mode",
+                    "bidirectional"
+                ],
+                [
+                    "modifyvm",
+                    "{{.Name}}",
+                    "--draganddrop",
+                    "disabled"
+                ]
+            ]
+        }
+    ]
+}

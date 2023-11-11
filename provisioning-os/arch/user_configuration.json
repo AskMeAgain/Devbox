@@ -1,0 +1,41 @@
+{
+    "additional-repositories": [],
+    "archinstall-language": "English",
+    "bootloader": "grub-install",
+    "config_version": "2.6.0",
+    "debug": false,
+    "hostname": "archlinux",
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "kb_layout": "de",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US"
+    },
+    "network_config": {},
+    "nic": {
+        "dhcp": true,
+        "dns": null,
+        "gateway": null,
+        "ip": null,
+        "type": "nm"
+    },
+    "no_pkg_lookups": false,
+    "ntp": true,
+    "offline": false,
+    "gfx_driver": "VMware / VirtualBox (open-source)",
+    "desktop-environment": "i3",
+    "profile": {
+        "path": "/usr/lib/python3.11/site-packages/archinstall/profiles/desktop.py"
+    },
+    "packages": [
+        "ansible", "openssh", "git"
+    ],
+    "parallel downloads": 0,
+    "script": "guided",
+    "silent": true,
+    "swap": true,
+    "timezone": "UTC",
+    "version": "2.6.0"
+}
