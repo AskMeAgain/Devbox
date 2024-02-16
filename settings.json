@@ -1,5 +1,5 @@
 {
-    "type": "arch",
+    "type": "manjaro",
     "password": "1234",
     "user-name": "dev",
     "cpu-count": "4",
@@ -9,9 +9,11 @@
     "memory": "12000",
     "arch-image-hash": "sha256:1a2c1cdea0118b60525f55ee616e9cd4cf68fe17db906ce3d8e46fd06f9907eb",
     "arch-image": "https://www.archlinux.de/download/iso/2023.07.01/archlinux-2023.07.01-x86_64.iso",
-    "manjaro-image-hash": "sha1:e7da7ab3d6f34e13526cd84230a4c4301737e21d",
-    "manjaro-image": "https://download.manjaro.org/i3/21.3.7/manjaro-i3-21.3.7-minimal-220817-linux515.iso",
+    "manjaro-image-hash": "sha512:b1e9a58e83ad8c7545c946fc67ac7e8e02ce813d05d998a7744d2cd1f3e24078b43010ce06e7dc97ea401a650fa79af48111b4c23ec7da6648ff579e11f40246",
+    "manjaro-image": "https://download.manjaro.org/i3/23.0.1/manjaro-i3-23.0.1-minimal-230921-linux65.iso",
+    "nix-image-hash": "sha256:494347682f0526dc0ea2a2adec8ae1d5c91fae062ec0693a0e229162380fc802",
+    "nix-image": "https://channels.nixos.org/nixos-23.05/latest-nixos-minimal-x86_64-linux.iso",
     "disksize": "50480",
     "dotfiles-git": "https://github.com/AskMeAgain/dotfiles.git",
-    "vmname": "VM-Arch-002"
+    "vmname": "VM-Manjaro-001"
 }

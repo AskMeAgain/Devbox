@@ -1,7 +1,7 @@
 {
     "additional-repositories": [],
     "archinstall-language": "English",
-    "bootloader": "grub-install",
+    "bootloader": "grub",
     "config_version": "2.6.0",
     "debug": false,
     "hostname": "archlinux",

@@ -1,0 +1,31 @@
+- name: test run
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: cloning dotfiles repo
+      shell: "{{ item }}"
+      with_items:
+        - "yadm init"
+        - "yadm remote add origin {{ dotfiles_git }}"
+        - "yadm fetch"
+        - "yadm checkout -t origin/master -f"
+
+    - name: setting nix channel
+      shell: "{{ item }}"
+      become: yes
+      become_user: root
+      with_items:
+        - "nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager"
+        - "nix-channel --update"
+        - "rm -f /home/dev/.zshrc"
+
+    - name: Upgrade system
+      command: "nixos-rebuild switch"
+      become: yes
+      become_user: root
+
+    - name: setting up the file
+      shell: "yadm bootstrap"
+      environment:
+        NIXOS: "true"

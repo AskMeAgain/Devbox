@@ -28,7 +28,7 @@
     "provisioners": [
         {
             "type": "ansible-local",
-            "playbook_file": "./provisioning-packages/ansible.yml",
+            "playbook_file": "./provisioning-os/manjaro/ansible.yml",
             "extra_arguments": [
                 "--extra-vars",
                 "\"ansible_sudo_pass={{ user `password`}} username={{ user `user-name`}} dotfiles_git={{ user `dotfiles-git`}}\""

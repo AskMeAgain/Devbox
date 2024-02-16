@@ -1,0 +1,38 @@
+{
+    "builders": [
+        {
+            "vm_name": "{{user `vmname`}}",
+            "type": "virtualbox-ovf",
+            "keep_registered": true,
+            "source_path": "./packer_cache/outputs/os/{{user `vmname`}}-temp1.ovf",
+            "output_directory": "./packer_cache/outputs/software",
+            "ssh_username": "dev",
+            "ssh_password": "1234",
+            "shutdown_command": "echo '{{user `password`}}' | sudo -S shutdown now",
+            "vboxmanage": [
+                [
+                    "modifyvm",
+                    "{{.Name}}",
+                    "--monitorcount",
+                    "{{user `monitor-count`}}"
+                ],
+                [
+                    "setextradata",
+                    "{{.Name}}",
+                    "GUI/SuppressMessages",
+                    "all"
+                ]
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible-local",
+            "playbook_file": "./provisioning-os/nix/ansible.yml",
+            "extra_arguments": [
+                "--extra-vars",
+                "\"ansible_sudo_pass={{ user `password`}} username={{ user `user-name`}} dotfiles_git={{ user `dotfiles-git`}}\""
+            ]
+        }
+    ]
+}

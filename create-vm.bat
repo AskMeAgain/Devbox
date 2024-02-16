@@ -1,6 +1,7 @@
 @ECHO OFF
 
 set PACKER_LOG=1
+setlocal
 
 echo.
 echo --- Installing packer ---
@@ -37,6 +38,6 @@ if NOT EXIST .\packer_cache\outputs\os\%vmname%-temp1.ovf (
 timeout /T 2 >NUL
 
 echo --------------- applying user configs
-.\packer.exe build -force -var-file="settings.json" provisioning-packages/package-provisioning.json
+.\packer.exe build -force -var-file="settings.json" provisioning-os/%type%/package-provisioning.json
 
 pause
