@@ -19,8 +19,9 @@ VirtualBox from Oracle is needed. [Packer](https://www.packer.io/) is downloaded
 1. Pull this repository
 2. edit settings.json file as you wish
     a. choose a good vm name
-    b. if you wish to install Manjaro, choose type "manjaro"
-    c. if you wisth to install ArchLinux, choose type "arch"
+    b. if you wish to install Manjaro, choose type "manjaro" (Ready)
+    c. if you wisth to install ArchLinux, choose type "arch" (WIP)
+    d. if you wish to install NixOs, choose type "nix" (WIP)
 3. run create-vm.bat
 4. wait 20 minutes
 5. start virtual box!

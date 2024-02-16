@@ -21,8 +21,8 @@
                 "systemctl enable sshd.service<enter><wait3>{{user `password`}}<enter><wait3>",
                 "sudo pacman-mirrors --fasttrack 5 && ",
                 "sudo pacman -Syu ansible --noconfirm --overwrite /usr/lib/locale/\\*/\\* && ",
-                "ansible-galaxy collection install kewlfft.aur && ",
-                "sudo shutdown now<enter><wait10>1234<enter><wait500>1234<enter>"
+                "ansible-galaxy collection install kewlfft.aur<enter><wait5>1234<enter><wait500>",
+                "sudo shutdown now<enter><wait10>1234<enter>"
             ],
             "disk_size": "{{user `disksize`}}",
             "hard_drive_interface": "sata",
@@ -46,12 +46,6 @@
                     "{{.Name}}",
                     "--name=shared",
                     "--hostpath={{user `shared-folder-name`}}"
-                ],
-                [
-                    "modifyvm",
-                    "{{.Name}}",
-                    "--graphicscontroller",
-                    "{{user `graphics-controller`}}"
                 ],
                 [
                     "modifyvm",
