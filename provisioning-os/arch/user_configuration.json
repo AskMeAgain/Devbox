@@ -9,7 +9,7 @@
         "linux"
     ],
     "locale_config": {
-        "kb_layout": "de",
+        "kb_layout": "en",
         "sys_enc": "UTF-8",
         "sys_lang": "en_US"
     },
