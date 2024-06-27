@@ -2,6 +2,10 @@
 
 Devbox is a project that enables you to automatically set up a comprehensive programming environment within VirtualBox.
 
+EDIT 28-06-2024: This project is archived as it was just to much work keeping it up to date. Unfortunately the manjaro iso is completely incompatible with VB.
+
+Ill link to a new project once ill start working on it. Sorry guys! Was a fun time
+
 ## Features
 
 * one click installation
